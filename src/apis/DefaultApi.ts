@@ -297,7 +297,7 @@ export interface DefaultApiInterface {
     backtestReplay(requestParameters: BacktestReplayRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BacktestReplay200Response>;
 
     /**
-     * Same as `GET /api/v1/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
+     * Same as `GET /api/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
      * @summary Replay events with embedding filters
      * @param {BacktestReplayWithEmbeddingsRequest} backtestReplayWithEmbeddingsRequest 
      * @param {*} [options] Override http request option.
@@ -307,7 +307,7 @@ export interface DefaultApiInterface {
     backtestReplayWithEmbeddingsRaw(requestParameters: BacktestReplayWithEmbeddingsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BacktestReplayWithEmbeddings200Response>>;
 
     /**
-     * Same as `GET /api/v1/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
+     * Same as `GET /api/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
      * Replay events with embedding filters
      */
     backtestReplayWithEmbeddings(requestParameters: BacktestReplayWithEmbeddingsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BacktestReplayWithEmbeddings200Response>;
@@ -903,7 +903,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/backtest`,
+            path: `/api/backtest`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -922,7 +922,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
     }
 
     /**
-     * Same as `GET /api/v1/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
+     * Same as `GET /api/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
      * Replay events with embedding filters
      */
     async backtestReplayWithEmbeddingsRaw(requestParameters: BacktestReplayWithEmbeddingsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BacktestReplayWithEmbeddings200Response>> {
@@ -952,7 +952,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/backtest`,
+            path: `/api/backtest`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -963,7 +963,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
     }
 
     /**
-     * Same as `GET /api/v1/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
+     * Same as `GET /api/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
      * Replay events with embedding filters
      */
     async backtestReplayWithEmbeddings(requestParameters: BacktestReplayWithEmbeddingsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BacktestReplayWithEmbeddings200Response> {
