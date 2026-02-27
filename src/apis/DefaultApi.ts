@@ -297,7 +297,7 @@ export interface DefaultApiInterface {
     backtestReplay(requestParameters: BacktestReplayRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BacktestReplay200Response>;
 
     /**
-     * Same as `GET /api/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
+     * Same as `GET /v1/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
      * @summary Replay events with embedding filters
      * @param {BacktestReplayWithEmbeddingsRequest} backtestReplayWithEmbeddingsRequest 
      * @param {*} [options] Override http request option.
@@ -307,7 +307,7 @@ export interface DefaultApiInterface {
     backtestReplayWithEmbeddingsRaw(requestParameters: BacktestReplayWithEmbeddingsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BacktestReplayWithEmbeddings200Response>>;
 
     /**
-     * Same as `GET /api/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
+     * Same as `GET /v1/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
      * Replay events with embedding filters
      */
     backtestReplayWithEmbeddings(requestParameters: BacktestReplayWithEmbeddingsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BacktestReplayWithEmbeddings200Response>;
@@ -903,7 +903,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/backtest`,
+            path: `/v1/backtest`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -922,7 +922,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
     }
 
     /**
-     * Same as `GET /api/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
+     * Same as `GET /v1/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
      * Replay events with embedding filters
      */
     async backtestReplayWithEmbeddingsRaw(requestParameters: BacktestReplayWithEmbeddingsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BacktestReplayWithEmbeddings200Response>> {
@@ -952,7 +952,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/backtest`,
+            path: `/v1/backtest`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -963,7 +963,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
     }
 
     /**
-     * Same as `GET /api/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
+     * Same as `GET /v1/backtest` but accepts a JSON body for advanced filters including embedding vector similarity search.  Use `embedding_filters` to find events about articles semantically similar to a reference embedding. Max 1 embedding filter per request. Requires **Pro tier or higher**. 
      * Replay events with embedding filters
      */
     async backtestReplayWithEmbeddings(requestParameters: BacktestReplayWithEmbeddingsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BacktestReplayWithEmbeddings200Response> {
@@ -1001,7 +1001,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/item`,
+            path: `/v1/item`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1056,7 +1056,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/content`,
+            path: `/v1/content`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1122,7 +1122,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/embeddings`,
+            path: `/v1/embeddings`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1169,7 +1169,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/entities/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: `/v1/entities/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1228,7 +1228,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/graph/entity-network`,
+            path: `/v1/graph/entity-network`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1283,7 +1283,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/related`,
+            path: `/v1/related`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1323,7 +1323,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/stats`,
+            path: `/v1/stats`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1378,7 +1378,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/stories/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: `/v1/stories/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1433,7 +1433,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/graph/story-entity`,
+            path: `/v1/graph/story-entity`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1491,7 +1491,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/stories/{id}/updates`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: `/v1/stories/{id}/updates`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1539,7 +1539,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/graph/topic-cluster`,
+            path: `/v1/graph/topic-cluster`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1587,7 +1587,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/usage`,
+            path: `/v1/usage`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1615,7 +1615,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/api/v1/version`,
+            path: `/v1/version`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1703,7 +1703,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/items`,
+            path: `/v1/items`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1743,7 +1743,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/categories`,
+            path: `/v1/categories`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1803,7 +1803,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/entities`,
+            path: `/v1/entities`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1858,7 +1858,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/entities/{id}/articles`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: `/v1/entities/{id}/articles`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1906,7 +1906,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/entities/politicians`,
+            path: `/v1/entities/politicians`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1958,7 +1958,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/stories/ranked`,
+            path: `/v1/stories/ranked`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1998,7 +1998,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/source-rankings`,
+            path: `/v1/source-rankings`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2038,7 +2038,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/sources`,
+            path: `/v1/sources`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2098,7 +2098,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/stories`,
+            path: `/v1/stories`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2145,7 +2145,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/stories/{id}/developments`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: `/v1/stories/{id}/developments`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2185,7 +2185,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/tags`,
+            path: `/v1/tags`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2229,7 +2229,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/entities/trending`,
+            path: `/v1/entities/trending`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2288,7 +2288,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/search`,
+            path: `/v1/search`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2347,7 +2347,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/search/full`,
+            path: `/v1/search/full`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2402,7 +2402,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/search/suggest`,
+            path: `/v1/search/suggest`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2451,7 +2451,7 @@ export class DefaultApi extends runtime.BaseAPI implements DefaultApiInterface {
             }
         }
         const response = await this.request({
-            path: `/api/v1/search/vector`,
+            path: `/v1/search/vector`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
